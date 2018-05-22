@@ -1,0 +1,1058 @@
+Analysis & Synthesis report for lab4_task2
+Thu Mar 08 21:26:54 2018
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |task2|state
+ 11. State Machine - |task2|ksa:ksa|state
+ 12. State Machine - |task2|init:init|state
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Source assignments for s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|altsyncram_4fg2:altsyncram1
+ 19. Parameter Settings for User Entity Instance: s_mem:s|altsyncram:altsyncram_component
+ 20. Parameter Settings for Inferred Entity Instance: ksa:ksa|lpm_divide:Mod0
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "ksa:ksa"
+ 23. Port Connectivity Checks: "init:init"
+ 24. In-System Memory Content Editor Settings
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Mar 08 21:26:54 2018       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                   ; lab4_task2                                  ;
+; Top-level Entity Name           ; task2                                       ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 199                                         ;
+; Total pins                      ; 67                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 2,048                                       ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; task2              ; lab4_task2         ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Optimization Technique                                                          ; Speed              ; Balanced           ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                               ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                                     ; Library     ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-------------+
+; ../task1/s_mem.v                                                   ; yes             ; User Wizard-Generated File                   ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v                                                            ;             ;
+; task2.sv                                                           ; yes             ; User SystemVerilog HDL File                  ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv                                                           ;             ;
+; ksa.sv                                                             ; yes             ; User SystemVerilog HDL File                  ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv                                                             ;             ;
+; ../task1/init.sv                                                   ; yes             ; User SystemVerilog HDL File                  ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv                                                            ;             ;
+; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf                                                            ;             ;
+; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                     ;             ;
+; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc                                                               ;             ;
+; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_decode.inc                                                            ;             ;
+; aglobal171.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc                                                            ;             ;
+; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                             ;             ;
+; altrom.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altrom.inc                                                                ;             ;
+; altram.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altram.inc                                                                ;             ;
+; altdpram.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.inc                                                              ;             ;
+; db/altsyncram_pvp1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/altsyncram_pvp1.tdf                                             ;             ;
+; db/altsyncram_4fg2.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/altsyncram_4fg2.tdf                                             ;             ;
+; sld_mod_ram_rom.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd                                                       ;             ;
+; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                                             ;             ;
+; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                                         ;             ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                                                            ;             ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_hub.vhd                                                               ; altera_sld  ;
+; db/ip/sld590eee0f/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/ip/sld590eee0f/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                                          ;             ;
+; lpm_divide.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                            ;             ;
+; abs_divider.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/abs_divider.inc                                                           ;             ;
+; sign_div_unsign.inc                                                ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                       ;             ;
+; db/lpm_divide_62m.tdf                                              ; yes             ; Auto-Generated Megafunction                  ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/lpm_divide_62m.tdf                                              ;             ;
+; db/sign_div_unsign_9kh.tdf                                         ; yes             ; Auto-Generated Megafunction                  ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/sign_div_unsign_9kh.tdf                                         ;             ;
+; db/alt_u_div_ose.tdf                                               ; yes             ; Auto-Generated Megafunction                  ; C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/alt_u_div_ose.tdf                                               ;             ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 207                      ;
+;                                             ;                          ;
+; Combinational ALUT usage for logic          ; 338                      ;
+;     -- 7 input functions                    ; 1                        ;
+;     -- 6 input functions                    ; 63                       ;
+;     -- 5 input functions                    ; 48                       ;
+;     -- 4 input functions                    ; 35                       ;
+;     -- <=3 input functions                  ; 191                      ;
+;                                             ;                          ;
+; Dedicated logic registers                   ; 199                      ;
+;                                             ;                          ;
+; I/O pins                                    ; 67                       ;
+; Total MLAB memory bits                      ; 0                        ;
+; Total block memory bits                     ; 2048                     ;
+;                                             ;                          ;
+; Total DSP Blocks                            ; 0                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
+; Maximum fan-out                             ; 156                      ;
+; Total fan-out                               ; 2076                     ;
+; Average fan-out                             ; 3.02                     ;
++---------------------------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                               ; Entity Name                       ; Library Name ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; |task2                                                                                                                                  ; 338 (86)            ; 199 (45)                  ; 2048              ; 0          ; 67   ; 0            ; |task2                                                                                                                                                                                                                                                                                                                                            ; task2                             ; work         ;
+;    |init:init|                                                                                                                          ; 27 (27)             ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |task2|init:init                                                                                                                                                                                                                                                                                                                                  ; init                              ; work         ;
+;    |ksa:ksa|                                                                                                                            ; 85 (47)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |task2|ksa:ksa                                                                                                                                                                                                                                                                                                                                    ; ksa                               ; work         ;
+;       |lpm_divide:Mod0|                                                                                                                 ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |task2|ksa:ksa|lpm_divide:Mod0                                                                                                                                                                                                                                                                                                                    ; lpm_divide                        ; work         ;
+;          |lpm_divide_62m:auto_generated|                                                                                                ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |task2|ksa:ksa|lpm_divide:Mod0|lpm_divide_62m:auto_generated                                                                                                                                                                                                                                                                                      ; lpm_divide_62m                    ; work         ;
+;             |sign_div_unsign_9kh:divider|                                                                                               ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |task2|ksa:ksa|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider                                                                                                                                                                                                                                                          ; sign_div_unsign_9kh               ; work         ;
+;                |alt_u_div_ose:divider|                                                                                                  ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |task2|ksa:ksa|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider                                                                                                                                                                                                                                    ; alt_u_div_ose                     ; work         ;
+;    |s_mem:s|                                                                                                                            ; 41 (0)              ; 37 (0)                    ; 2048              ; 0          ; 0    ; 0            ; |task2|s_mem:s                                                                                                                                                                                                                                                                                                                                    ; s_mem                             ; work         ;
+;       |altsyncram:altsyncram_component|                                                                                                 ; 41 (0)              ; 37 (0)                    ; 2048              ; 0          ; 0    ; 0            ; |task2|s_mem:s|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                                    ; altsyncram                        ; work         ;
+;          |altsyncram_pvp1:auto_generated|                                                                                               ; 41 (0)              ; 37 (0)                    ; 2048              ; 0          ; 0    ; 0            ; |task2|s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated                                                                                                                                                                                                                                                                     ; altsyncram_pvp1                   ; work         ;
+;             |altsyncram_4fg2:altsyncram1|                                                                                               ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |task2|s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|altsyncram_4fg2:altsyncram1                                                                                                                                                                                                                                         ; altsyncram_4fg2                   ; work         ;
+;             |sld_mod_ram_rom:mgl_prim2|                                                                                                 ; 41 (23)             ; 37 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |task2|s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                                                                                                                                                                                                           ; sld_mod_ram_rom                   ; work         ;
+;                |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|                                                                     ; 18 (18)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |task2|s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr                                                                                                                                                                                        ; sld_rom_sr                        ; work         ;
+;    |sld_hub:auto_hub|                                                                                                                   ; 99 (1)              ; 87 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |task2|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
+;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 98 (0)              ; 87 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |task2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
+;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 98 (0)              ; 87 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |task2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
+;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 98 (1)              ; 87 (5)                    ; 0                 ; 0          ; 0    ; 0            ; |task2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab  ;
+;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 97 (0)              ; 82 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |task2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab  ;
+;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 97 (65)             ; 82 (54)                   ; 0                 ; 0          ; 0    ; 0            ; |task2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work         ;
+;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 14 (14)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |task2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ; sld_rom_sr                        ; work         ;
+;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 18 (18)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |task2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                    ; altera_sld   ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                      ;
++---------------------------------------------------------------------------------------------------------------+------------+----------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                          ; Type       ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++---------------------------------------------------------------------------------------------------------------+------------+----------------+--------------+--------------+--------------+--------------+------+------+
+; s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|altsyncram_4fg2:altsyncram1|ALTSYNCRAM ; M10K block ; True Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048 ; None ;
++---------------------------------------------------------------------------------------------------------------+------------+----------------+--------------+--------------+--------------+--------------+------+------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                        ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                            ; IP Include File ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |task2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |task2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |task2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |task2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                 ;
+; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |task2|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                 ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |task2|state                                                                                                                                                                                                                                             ;
++-------------------------+-----------------+------------+---------------------+-----------------+-----------------+---------------+-------------------+---------------------+---------------+-------------------------+-------------------------+-------------------------+
+; Name                    ; state.Write_0_0 ; state.Done ; state.request_s_i_1 ; state.write_s_j ; state.write_s_i ; state.get_s_j ; state.request_s_j ; state.import_to_ksa ; state.get_s_i ; state.Init_Deassert_en1 ; state.Init_Wait_For_Rdy ; state.Waiting_For_Reset ;
++-------------------------+-----------------+------------+---------------------+-----------------+-----------------+---------------+-------------------+---------------------+---------------+-------------------------+-------------------------+-------------------------+
+; state.Waiting_For_Reset ; 0               ; 0          ; 0                   ; 0               ; 0               ; 0             ; 0                 ; 0                   ; 0             ; 0                       ; 0                       ; 0                       ;
+; state.Init_Wait_For_Rdy ; 0               ; 0          ; 0                   ; 0               ; 0               ; 0             ; 0                 ; 0                   ; 0             ; 0                       ; 1                       ; 1                       ;
+; state.Init_Deassert_en1 ; 0               ; 0          ; 0                   ; 0               ; 0               ; 0             ; 0                 ; 0                   ; 0             ; 1                       ; 0                       ; 1                       ;
+; state.get_s_i           ; 0               ; 0          ; 0                   ; 0               ; 0               ; 0             ; 0                 ; 0                   ; 1             ; 0                       ; 0                       ; 1                       ;
+; state.import_to_ksa     ; 0               ; 0          ; 0                   ; 0               ; 0               ; 0             ; 0                 ; 1                   ; 0             ; 0                       ; 0                       ; 1                       ;
+; state.request_s_j       ; 0               ; 0          ; 0                   ; 0               ; 0               ; 0             ; 1                 ; 0                   ; 0             ; 0                       ; 0                       ; 1                       ;
+; state.get_s_j           ; 0               ; 0          ; 0                   ; 0               ; 0               ; 1             ; 0                 ; 0                   ; 0             ; 0                       ; 0                       ; 1                       ;
+; state.write_s_i         ; 0               ; 0          ; 0                   ; 0               ; 1               ; 0             ; 0                 ; 0                   ; 0             ; 0                       ; 0                       ; 1                       ;
+; state.write_s_j         ; 0               ; 0          ; 0                   ; 1               ; 0               ; 0             ; 0                 ; 0                   ; 0             ; 0                       ; 0                       ; 1                       ;
+; state.request_s_i_1     ; 0               ; 0          ; 1                   ; 0               ; 0               ; 0             ; 0                 ; 0                   ; 0             ; 0                       ; 0                       ; 1                       ;
+; state.Done              ; 0               ; 1          ; 0                   ; 0               ; 0               ; 0             ; 0                 ; 0                   ; 0             ; 0                       ; 0                       ; 1                       ;
+; state.Write_0_0         ; 1               ; 0          ; 0                   ; 0               ; 0               ; 0             ; 0                 ; 0                   ; 0             ; 0                       ; 0                       ; 1                       ;
++-------------------------+-----------------+------------+---------------------+-----------------+-----------------+---------------+-------------------+---------------------+---------------+-------------------------+-------------------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------+
+; State Machine - |task2|ksa:ksa|state                          ;
++-----------------+-------------+-------------+-----------------+
+; Name            ; state.Ready ; state.Reset ; state.Not_Ready ;
++-----------------+-------------+-------------+-----------------+
+; state.Ready     ; 0           ; 0           ; 0               ;
+; state.Not_Ready ; 1           ; 0           ; 1               ;
+; state.Reset     ; 1           ; 1           ; 0               ;
++-----------------+-------------+-------------+-----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------+
+; State Machine - |task2|init:init|state                        ;
++-----------------+-------------+-----------------+-------------+
+; Name            ; state.Reset ; state.Not_Ready ; state.Ready ;
++-----------------+-------------+-----------------+-------------+
+; state.Not_Ready ; 0           ; 0               ; 0           ;
+; state.Ready     ; 0           ; 1               ; 1           ;
+; state.Reset     ; 1           ; 1               ; 0           ;
++-----------------+-------------+-----------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                       ;
++---------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                                                                   ; Reason for Removal                     ;
++---------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; ksa:ksa|j[8..14]                                                                                                                ; Lost fanout                            ;
+; state~14                                                                                                                        ; Lost fanout                            ;
+; state~15                                                                                                                        ; Lost fanout                            ;
+; state~16                                                                                                                        ; Lost fanout                            ;
+; state~17                                                                                                                        ; Lost fanout                            ;
+; ksa:ksa|state~4                                                                                                                 ; Lost fanout                            ;
+; ksa:ksa|state~5                                                                                                                 ; Lost fanout                            ;
+; init:init|state~4                                                                                                               ; Lost fanout                            ;
+; init:init|state~5                                                                                                               ; Lost fanout                            ;
+; init:init|state.Reset                                                                                                           ; Stuck at GND due to stuck port data_in ;
+; ksa:ksa|state.Reset                                                                                                             ; Lost fanout                            ;
+; s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 18                                                                                          ;                                        ;
++---------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                 ;
++---------------+--------------------+----------------------------------------+
+; Register name ; Reason for Removal ; Registers Removed due to This Register ;
++---------------+--------------------+----------------------------------------+
+; ksa:ksa|j[13] ; Lost Fanouts       ; ksa:ksa|j[14]                          ;
++---------------+--------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 199   ;
+; Number of registers using Synchronous Clear  ; 24    ;
+; Number of registers using Synchronous Load   ; 17    ;
+; Number of registers using Asynchronous Clear ; 54    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 141   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 3       ;
+; Total number of inverted registers = 2                                                                                                                                                                                                                                                                                          ;         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |task2|index_counter[3]                                                                                                                                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |task2|s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[6]                                                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |task2|s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[1]                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |task2|s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[0]                                                ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |task2|ksa:ksa|index_counter[7]                                                                                                                                            ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |task2|s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[2] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |task2|ksa:ksa|j[0]                                                                                                                                                        ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |task2|ksa:ksa|j[2]                                                                                                                                                        ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 40 LEs               ; 28 LEs                 ; Yes        ; |task2|s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[2]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |task2|init:init|S                                                                                                                                                         ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |task2|Selector48                                                                                                                                                          ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |task2|Selector36                                                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|altsyncram_4fg2:altsyncram1 ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                          ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                           ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: s_mem:s|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+--------------------------+
+; Parameter Name                     ; Value                ; Type                     ;
++------------------------------------+----------------------+--------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                  ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE           ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                  ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                  ;
+; WIDTH_A                            ; 8                    ; Signed Integer           ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer           ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer           ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                  ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                  ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                  ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                  ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                  ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                  ;
+; WIDTH_B                            ; 1                    ; Untyped                  ;
+; WIDTHAD_B                          ; 1                    ; Untyped                  ;
+; NUMWORDS_B                         ; 1                    ; Untyped                  ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                  ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                  ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                  ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                  ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                  ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                  ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                  ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                  ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                  ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                  ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                  ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer           ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                  ;
+; RAM_BLOCK_TYPE                     ; M10K                 ; Untyped                  ;
+; BYTE_SIZE                          ; 8                    ; Untyped                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                  ;
+; INIT_FILE                          ; UNUSED               ; Untyped                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                  ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                  ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                  ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                  ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                  ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                  ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                  ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                  ;
+; CBXI_PARAMETER                     ; altsyncram_pvp1      ; Untyped                  ;
++------------------------------------+----------------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ksa:ksa|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------+
+; Parameter Name         ; Value          ; Type                           ;
++------------------------+----------------+--------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                        ;
+; CBXI_PARAMETER         ; lpm_divide_62m ; Untyped                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                 ;
++------------------------+----------------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                    ;
++-------------------------------------------+-----------------------------------------+
+; Name                                      ; Value                                   ;
++-------------------------------------------+-----------------------------------------+
+; Number of entity instances                ; 1                                       ;
+; Entity Instance                           ; s_mem:s|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                             ;
+;     -- WIDTH_A                            ; 8                                       ;
+;     -- NUMWORDS_A                         ; 256                                     ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                            ;
+;     -- WIDTH_B                            ; 1                                       ;
+;     -- NUMWORDS_B                         ; 1                                       ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                  ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                            ;
+;     -- RAM_BLOCK_TYPE                     ; M10K                                    ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                               ;
++-------------------------------------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ksa:ksa"                                                                                   ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; key[9..8]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; key[5..2]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; key[23..10] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; key[7..6]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; key[1..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wrdata      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; wren        ; Output ; Info     ; Explicitly unconnected                                                              ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "init:init"             ;
++------+--------+----------+------------------------+
+; Port ; Type   ; Severity ; Details                ;
++------+--------+----------+------------------------+
+; wren ; Output ; Info     ; Explicitly unconnected ;
++------+--------+----------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; In-System Memory Content Editor Settings                                                                                           ;
++----------------+-------------+-------+-------+------------+------------------------------------------------------------------------+
+; Instance Index ; Instance ID ; Width ; Depth ; Mode       ; Hierarchy Location                                                     ;
++----------------+-------------+-------+-------+------------+------------------------------------------------------------------------+
+; 0              ; S           ; 8     ; 256   ; Read/Write ; s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated ;
++----------------+-------------+-------+-------+------------+------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 112                         ;
+;     CLR               ; 5                           ;
+;     ENA               ; 41                          ;
+;     ENA CLR           ; 7                           ;
+;     ENA CLR SLD       ; 8                           ;
+;     ENA SCLR          ; 17                          ;
+;     ENA SLD           ; 8                           ;
+;     plain             ; 26                          ;
+; arriav_lcell_comb     ; 239                         ;
+;     arith             ; 90                          ;
+;         0 data inputs ; 7                           ;
+;         1 data inputs ; 63                          ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 5                           ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 148                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 46                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 15                          ;
+;         5 data inputs ; 28                          ;
+;         6 data inputs ; 47                          ;
+; boundary_port         ; 94                          ;
+; stratixv_ram_block    ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 10.40                       ;
+; Average LUT depth     ; 3.04                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Thu Mar 08 21:26:16 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4_task2 -c lab4_task2
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/wongb/documents/github/cpen311/lab-4-basilwong/task1/s_mem.v
+    Info (12023): Found entity 1: s_mem File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file task2.sv
+    Info (12023): Found entity 1: task2 File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ksa.sv
+    Info (12023): Found entity 1: ksa File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/wongb/documents/github/cpen311/lab-4-basilwong/task1/init.sv
+    Info (12023): Found entity 1: init File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv Line: 1
+Info (12127): Elaborating entity "task2" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at task2.sv(205): truncated value with size 32 to match size of target (9) File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 205
+Warning (10230): Verilog HDL assignment warning at task2.sv(348): truncated value with size 32 to match size of target (8) File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 348
+Warning (10034): Output port "HEX0" at task2.sv(2) has no driver File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+Warning (10034): Output port "HEX1" at task2.sv(2) has no driver File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+Warning (10034): Output port "HEX2" at task2.sv(2) has no driver File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+Warning (10034): Output port "HEX3" at task2.sv(3) has no driver File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+Warning (10034): Output port "HEX4" at task2.sv(3) has no driver File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+Warning (10034): Output port "HEX5" at task2.sv(3) has no driver File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+Warning (10034): Output port "LEDR" at task2.sv(4) has no driver File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 4
+Info (12128): Elaborating entity "s_mem" for hierarchy "s_mem:s" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 67
+Info (12128): Elaborating entity "altsyncram" for hierarchy "s_mem:s|altsyncram:altsyncram_component" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v Line: 85
+Info (12130): Elaborated megafunction instantiation "s_mem:s|altsyncram:altsyncram_component" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v Line: 85
+Info (12133): Instantiated megafunction "s_mem:s|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v Line: 85
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=S"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "M10K"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_pvp1.tdf
+    Info (12023): Found entity 1: altsyncram_pvp1 File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/altsyncram_pvp1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_pvp1" for hierarchy "s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4fg2.tdf
+    Info (12023): Found entity 1: altsyncram_4fg2 File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/altsyncram_4fg2.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_4fg2" for hierarchy "s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|altsyncram_4fg2:altsyncram1" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/altsyncram_pvp1.tdf Line: 36
+Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/altsyncram_pvp1.tdf Line: 37
+Info (12130): Elaborated megafunction instantiation "s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/altsyncram_pvp1.tdf Line: 37
+Info (12133): Instantiated megafunction "s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter: File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/altsyncram_pvp1.tdf Line: 37
+    Info (12134): Parameter "CVALUE" = "00000000"
+    Info (12134): Parameter "IS_DATA_IN_RAM" = "1"
+    Info (12134): Parameter "IS_READABLE" = "1"
+    Info (12134): Parameter "NODE_NAME" = "1392508928"
+    Info (12134): Parameter "NUMWORDS" = "256"
+    Info (12134): Parameter "SHIFT_COUNT_BITS" = "4"
+    Info (12134): Parameter "WIDTH_WORD" = "8"
+    Info (12134): Parameter "WIDTHAD" = "8"
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 302
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
+Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "s_mem:s|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 828
+Info (12128): Elaborating entity "init" for hierarchy "init:init" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 70
+Warning (10230): Verilog HDL assignment warning at init.sv(48): truncated value with size 32 to match size of target (8) File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv Line: 48
+Warning (10034): Output port "wren" at init.sv(3) has no driver File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv Line: 3
+Info (12128): Elaborating entity "ksa" for hierarchy "ksa:ksa" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 74
+Warning (10230): Verilog HDL assignment warning at ksa.sv(17): truncated value with size 15 to match size of target (8) File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv Line: 17
+Warning (10230): Verilog HDL assignment warning at ksa.sv(92): truncated value with size 32 to match size of target (15) File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv Line: 92
+Warning (10230): Verilog HDL assignment warning at ksa.sv(97): truncated value with size 32 to match size of target (15) File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv Line: 97
+Warning (10230): Verilog HDL assignment warning at ksa.sv(101): truncated value with size 32 to match size of target (15) File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv Line: 101
+Warning (10230): Verilog HDL assignment warning at ksa.sv(111): truncated value with size 32 to match size of target (8) File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv Line: 111
+Warning (10034): Output port "wrdata" at ksa.sv(5) has no driver File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv Line: 5
+Warning (10034): Output port "wren" at ksa.sv(5) has no driver File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv Line: 5
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
+Info (11172): 2018.03.08.21:26:42 Progress: Loading sld590eee0f/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
+Info (11172): Presplit: "alt_sld_fab" instantiated altera_super_splitter "presplit"
+Info (11172): Splitter: "alt_sld_fab" instantiated altera_sld_splitter "splitter"
+Info (11172): Sldfabric: "alt_sld_fab" instantiated altera_sld_jtag_hub "sldfabric"
+Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification_hub "ident"
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld590eee0f/alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/ip/sld590eee0f/alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/ip/sld590eee0f/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ksa:ksa|Mod0" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv Line: 95
+Info (12130): Elaborated megafunction instantiation "ksa:ksa|lpm_divide:Mod0" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv Line: 95
+Info (12133): Instantiated megafunction "ksa:ksa|lpm_divide:Mod0" with the following parameter: File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv Line: 95
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "2"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_62m.tdf
+    Info (12023): Found entity 1: lpm_divide_62m File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/lpm_divide_62m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9kh File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/sign_div_unsign_9kh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ose.tdf
+    Info (12023): Found entity 1: alt_u_div_ose File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/db/alt_u_div_ose.tdf Line: 22
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 2
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 3
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 4
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 4
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 4
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 4
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 4
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 4
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 4
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 4
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 4
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 4
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (17049): 16 registers lost all their fanouts during netlist optimizations.
+Warning (20013): Ignored 231 assignments for entity "DE0_CV" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MINIMUM CURRENT" -to VGA_* -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50 -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK3_50 -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK4_50 -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50 -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[10] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[11] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[12] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[4] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[5] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[6] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[7] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[8] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[9] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CAS_N -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CKE -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CLK -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CS_N -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[10] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[11] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[12] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[13] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[14] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[15] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[4] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[5] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[6] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[7] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[8] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[9] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_LDQM -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_RAS_N -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_UDQM -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_WE_N -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_RESET_N -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[10] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[11] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[12] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[13] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[14] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[15] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[16] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[17] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[18] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[19] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[20] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[21] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[22] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[23] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[24] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[25] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[26] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[27] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[28] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[29] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[30] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[31] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[32] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[33] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[34] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[35] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[4] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[5] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[6] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[7] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[8] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[9] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[10] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[11] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[12] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[13] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[14] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[15] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[16] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[17] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[18] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[19] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[20] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[21] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[22] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[23] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[24] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[25] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[26] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[27] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[28] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[29] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[30] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[31] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[32] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[33] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[34] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[35] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[4] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[5] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[6] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[7] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[8] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[9] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[4] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[5] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[6] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[4] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[5] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[6] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[4] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[5] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[6] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[4] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[5] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[6] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[4] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[5] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[6] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[4] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[5] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[6] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[4] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[5] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[6] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[7] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[8] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[9] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK2 -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT2 -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_CLK -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_CMD -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DATA[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DATA[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DATA[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SD_DATA[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[4] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[5] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[8] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[9] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3] -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS -entity DE0_CV was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE0_CV -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE0_CV -section_id Top was ignored
+Info (144001): Generated suppressed messages file C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/output_files/lab4_task2.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 9 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 13 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+Info (21057): Implemented 466 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 53 output pins
+    Info (21061): Implemented 386 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 318 warnings
+    Info: Peak virtual memory: 806 megabytes
+    Info: Processing ended: Thu Mar 08 21:26:54 2018
+    Info: Elapsed time: 00:00:38
+    Info: Total CPU time (on all processors): 00:01:23
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/output_files/lab4_task2.map.smsg.
+
+

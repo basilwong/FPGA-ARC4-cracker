@@ -1,0 +1,27 @@
+
+State Machine - |task2|state
+Name state.Write_0_0 state.Done state.request_s_i_1 state.write_s_j state.write_s_i state.get_s_j state.request_s_j state.import_to_ksa state.get_s_i state.Init_Deassert_en1 state.Init_Wait_For_Rdy state.Waiting_For_Reset 
+state.Waiting_For_Reset 0 0 0 0 0 0 0 0 0 0 0 0 
+state.Init_Wait_For_Rdy 0 0 0 0 0 0 0 0 0 0 1 1 
+state.Init_Deassert_en1 0 0 0 0 0 0 0 0 0 1 0 1 
+state.get_s_i 0 0 0 0 0 0 0 0 1 0 0 1 
+state.import_to_ksa 0 0 0 0 0 0 0 1 0 0 0 1 
+state.request_s_j 0 0 0 0 0 0 1 0 0 0 0 1 
+state.get_s_j 0 0 0 0 0 1 0 0 0 0 0 1 
+state.write_s_i 0 0 0 0 1 0 0 0 0 0 0 1 
+state.write_s_j 0 0 0 1 0 0 0 0 0 0 0 1 
+state.request_s_i_1 0 0 1 0 0 0 0 0 0 0 0 1 
+state.Done 0 1 0 0 0 0 0 0 0 0 0 1 
+state.Write_0_0 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |task2|ksa:ksa|state
+Name state.Ready state.Reset state.Not_Ready 
+state.Ready 0 0 0 
+state.Not_Ready 1 0 1 
+state.Reset 1 1 0 
+
+State Machine - |task2|init:init|state
+Name state.Reset state.Not_Ready state.Ready 
+state.Not_Ready 0 0 0 
+state.Ready 0 1 1 
+state.Reset 1 1 0 

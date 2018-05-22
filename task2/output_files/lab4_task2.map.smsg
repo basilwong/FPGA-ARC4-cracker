@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at task2.sv(1): object "KEY" differs only in case from object "key" in the same scope File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv Line: 1
+Warning (10268): Verilog HDL information at ksa.sv(85): always construct contains both blocking and non-blocking assignments File: C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv Line: 85

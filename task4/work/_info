@@ -1,0 +1,289 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3
+varc4
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1521498056
+!i10b 1
+!s100 `e021^3nQAKeH`TcBnCi03
+IJkCIbk7U0^WhW[9hHMfkJ1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 arc4_sv_unit
+S1
+Z3 dC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4
+w1520815793
+8C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/arc4.sv
+FC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/arc4.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1521498056.000000
+!s107 C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/arc4.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/arc4.sv|
+!i113 1
+Z6 o-work work -sv
+Z7 tCvgOpt 0
+vcrack
+R0
+R1
+!i10b 1
+!s100 H3<0EZJK05e<ZSeHCkQND0
+IjF1UNooXS5^1h?B0jRg2F2
+R2
+!s105 crack_sv_unit
+S1
+R3
+w1520818392
+8C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/crack.sv
+FC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/crack.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/crack.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/crack.sv|
+!i113 1
+R6
+R7
+vct_mem
+Z8 !s110 1521498057
+!i10b 1
+!s100 N2EjnA^GKmSZHiW8G4=c31
+IEJP;XHa4=1XKhYN4XeGFf3
+R2
+R3
+w1520821035
+8C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/ct_mem.v
+FC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/ct_mem.v
+Z9 L0 39
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/ct_mem.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/ct_mem.v|
+!i113 1
+Z10 o-work work
+R7
+vinit
+R0
+R8
+!i10b 1
+!s100 BG8dl8NOnbfO9:_A88kIi3
+IN<^OcUP7X:z=DGS];APFD1
+R2
+!s105 init_sv_unit
+S1
+R3
+w1520815017
+8C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv
+FC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z11 !s108 1521498057.000000
+!s107 C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv|
+!i113 1
+R6
+R7
+vksa
+R0
+R8
+!i10b 1
+!s100 fU7Y=DA0lK5Z95T>RfFH[2
+IIVkK3IA@6ke=JD97JicPz0
+R2
+!s105 ksa_sv_unit
+S1
+R3
+w1520815429
+8C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv
+FC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv|
+!i113 1
+R6
+R7
+vprga
+R0
+R1
+!i10b 1
+!s100 SX9Xc=n]BL6_N4T4ann5[3
+IobQNe:JXMRzJHiOl`j:lX0
+R2
+!s105 prga_sv_unit
+S1
+R3
+w1520815558
+8C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/prga.sv
+FC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/prga.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/prga.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/prga.sv|
+!i113 1
+R6
+R7
+vpt_mem
+R1
+!i10b 1
+!s100 ]ZVg`8A3TH0=;Xn:b[;lI2
+IfcU@4lY:`kST22lDOoI_83
+R2
+R3
+w1520516890
+8C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/pt_mem.v
+FC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/pt_mem.v
+R9
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/pt_mem.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/pt_mem.v|
+!i113 1
+R10
+R7
+vs_mem
+R8
+!i10b 1
+!s100 4Dk;RgZTCj]hOzdGD5c<;1
+Il@WfheZ40YSGzT;57D0dA1
+R2
+R3
+w1519434458
+8C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v
+FC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v
+R9
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v|
+!i113 1
+R10
+R7
+vsegger7
+R0
+!s110 1521498058
+!i10b 1
+!s100 e62VZf3Z@nalC@eX3EzPJ0
+I<J]0>JnZhChQoj03G_0oH0
+R2
+!s105 segger7_sv_unit
+S1
+R3
+w1520768236
+8C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv
+FC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1521498058.000000
+!s107 C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv|
+!i113 1
+R6
+R7
+vtask2
+R0
+R8
+!i10b 1
+!s100 @kQ`:N<8[I2`GE88]F:UR0
+Ii738niLBXiO_2=3m`RO490
+R2
+!s105 task2_sv_unit
+S1
+R3
+w1520815644
+8C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv
+FC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv|
+!i113 1
+R6
+R7
+vtask4
+R0
+R1
+!i10b 1
+!s100 A5TkkeZP083@1hl<U6OFK2
+I4n@a<kbR_b:b6l7T36]6z0
+R2
+!s105 task4_sv_unit
+S1
+R3
+w1520815718
+8C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/task4.sv
+FC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/task4.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/task4.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/task4.sv|
+!i113 1
+R6
+R7
+vtask4_tb
+R0
+R1
+!i10b 1
+!s100 YF;LHio7;R]fPgJL2bX?>0
+IN=o^^hl60jlITSEUJ9PdP0
+R2
+!s105 task4_tb_sv_unit
+S1
+R3
+w1520818305
+8C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/task4_tb.sv
+FC:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/task4_tb.sv
+L0 3
+R4
+r1
+!s85 0
+31
+!s108 1521498055.000000
+!s107 C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/task4_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/task4_tb.sv|
+!i113 1
+R6
+R7

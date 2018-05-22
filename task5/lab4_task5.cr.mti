@@ -1,0 +1,127 @@
+C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v {1 {vlog -work work -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module s_mem
+
+Top level modules:
+	s_mem
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module segger7
+
+Top level modules:
+	segger7
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/task5_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/task5_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module task5_tb
+
+Top level modules:
+	task5_tb
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/crack1.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/crack1.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module crack1
+
+Top level modules:
+	crack1
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/doublecrack.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/doublecrack.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module doublecrack
+
+Top level modules:
+	doublecrack
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/ct_mem.v {1 {vlog -work work -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/ct_mem.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ct_mem
+
+Top level modules:
+	ct_mem
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/arc4.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/arc4.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module arc4
+
+Top level modules:
+	arc4
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/pt_mem_2.v {1 {vlog -work work -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/pt_mem_2.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module pt_mem_2
+
+Top level modules:
+	pt_mem_2
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/task2.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module task2
+
+Top level modules:
+	task2
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/arc4_2.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/arc4_2.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module arc4_2
+
+Top level modules:
+	arc4_2
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ksa
+
+Top level modules:
+	ksa
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/pt_mem.v {1 {vlog -work work -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/pt_mem.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module pt_mem
+
+Top level modules:
+	pt_mem
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/crack2.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/crack2.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module crack2
+
+Top level modules:
+	crack2
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/copy_mem.v {1 {vlog -work work -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/copy_mem.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module copy_mem
+
+Top level modules:
+	copy_mem
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/s_mem_2.v {1 {vlog -work work -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/s_mem_2.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module s_mem_2
+
+Top level modules:
+	s_mem_2
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module init
+
+Top level modules:
+	init
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/prga.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task3/prga.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module prga
+
+Top level modules:
+	prga
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/task5.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task5/task5.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module task5
+
+Top level modules:
+	task5
+
+} {} {}}

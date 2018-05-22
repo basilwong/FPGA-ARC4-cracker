@@ -1,0 +1,35 @@
+C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v {1 {vlog -work work -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module s_mem
+
+Top level modules:
+	s_mem
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv {0 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module segger7
+** Error: (vlog-13059) C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv(24): near "28.": Digits must follow decimal point in real.
+** Error: (vlog-13069) C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv(24): near "28.": syntax error, unexpected FLOATING NUMBER.
+** Error: (vlog-13059) C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv(25): near "29.": Digits must follow decimal point in real.
+** Error: (vlog-13059) C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv(26): near "30.": Digits must follow decimal point in real.
+** Error: (vlog-13059) C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv(27): near "31.": Digits must follow decimal point in real.
+** Error: (vlog-13059) C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv(28): near "32.": Digits must follow decimal point in real.
+** Error: (vlog-13059) C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv(29): near "33.": Digits must follow decimal point in real.
+** Error: (vlog-13059) C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv(30): near "34.": Digits must follow decimal point in real.
+** Error: (vlog-13059) C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task4/segger7.sv(31): near "35.": Digits must follow decimal point in real.
+
+} {4.0 13.0} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task2/ksa.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ksa
+
+Top level modules:
+	ksa
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module init
+
+Top level modules:
+	init
+
+} {} {}}

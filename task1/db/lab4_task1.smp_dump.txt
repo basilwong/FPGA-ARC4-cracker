@@ -1,0 +1,11 @@
+
+State Machine - |task1|state
+Name state.0000 state.0010 state.0001 
+state.0000 0 0 0 
+state.0001 1 0 1 
+state.0010 1 1 0 
+
+State Machine - |task1|init:init|state
+Name state.Ready 
+state.Not_Ready 0 
+state.Ready 1 

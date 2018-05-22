@@ -1,0 +1,18 @@
+   typedef enum {
+	
+		Waiting_for_en,
+		Request_Message_Length,
+		Get_Message_Length,
+		Write_Message_Length,
+		Request_Message_Word,
+		Write_Message_Word,
+		Wait_for_rdy_1,
+		Wait_for_rdy_2,
+		Deassert,
+		Run_Cracks,
+		Done_1,
+		Done_2
+	
+	} state_type;
+	
+	state_type state = Waiting_for_en;

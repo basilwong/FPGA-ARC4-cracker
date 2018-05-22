@@ -1,0 +1,8 @@
+
+State Machine - |task4|top_state
+Name top_state.Cracking top_state.Deassert_en top_state.Waiting_for_rdy top_state.Waiting_to_start top_state.Got_Done_Signal 
+top_state.Waiting_to_start 0 0 0 0 0 
+top_state.Waiting_for_rdy 0 0 1 1 0 
+top_state.Deassert_en 0 1 0 1 0 
+top_state.Cracking 1 0 0 1 0 
+top_state.Got_Done_Signal 0 0 0 1 1 

@@ -1,0 +1,29 @@
+C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v {1 {vlog -work work -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/s_mem.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module s_mem
+
+Top level modules:
+	s_mem
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/task1.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/task1.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module task1
+
+Top level modules:
+	task1
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv {1 {vlog -work work -sv -stats=none C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/init.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module init
+
+Top level modules:
+	init
+
+} {} {}} C:/Users/wongb/Documents/GitHub/CPEN311/lab-4-basilwong/task1/task1_tb.sv {1 {vlog -work work -sv -stats=none {C:\Users\wongb\Documents\GitHub\CPEN311\lab-4-basilwong\task1\task1_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module task1_tb
+
+Top level modules:
+	task1_tb
+
+} {} {}}
