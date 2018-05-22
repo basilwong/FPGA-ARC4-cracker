@@ -17,7 +17,6 @@
   * [Task 3: The Pseudo\-Random Generation Algorithm](#task-3-the-pseudo-random-generation-algorithm)
   * [Task 4: Cracking ARC4](#task-4-cracking-arc4)
   * [Task 5: Cracking in parallel](#task-5-cracking-in-parallel)
-  * [BONUS: A competition](#bonus-a-competition)
 * [Deliverables](#deliverables)
 * [Extra ciphertexts](#extra-ciphertexts)
 
@@ -335,29 +334,6 @@ The toplevel `task5` should do exactly the same thing as `task4` but about twice
 
 Do not be discouraged by highfalutin' words like “parallel” — if you have a working `crack` module, this task is actually quite easy.
 
-
-### BONUS: A competition
-
-Time to get into the NSA business. For bonus credit in this lab, you may enter a competition to decrypt messages the fastest.
-
-If you wish to enter the competition, you will submit your `.sof` file and a text description **using Connect**; the deadline is the same as the lab submission. You must also submit the sources as usual on GitHub; if you don't submit the sources or we can't compile them to get close to the performance you claim, your entry will be disqualified. **Do not** add the `.sof` file to GitHub; we put it in .gitignore for a reason.
-
-The `.sof` file you submit must be for the **DE1-SoC**. If you have a DE0-CV and wish to enter the competition, please come talk to us at least one week before the deadline and we will see if we can lend you a DE1-SoC for this task. (In the event you decide to do this at the last minute, you can get really far trying things out on the the DE0-CV and eventually re-running Quartus to target the DE1-CV.)
-
-We will award a mark for beating an only slightly optimized baseline implementation we created (which should not be too hard), and additional marks if your performance and the quality of your solution are substantially better. Plus, there is the eternal fame and glory motivation. You do not need to demo your competition submission during the marking week.
-
-To facilitate automated timing of your submission on the DE1-SoC board, you will need to generate an additional single-ported RAM just like _S_ (8 bits wide and 256 addresses deep) with the instance ID of _MBOX_ and all addresses initialized to 0 at boot time. We will use this to communicate with your circuit as follows:
-
-1. We will load your `.sof` onto a DE1-SoC. Make sure your circuit works once loaded without any intervention; since we will test submissions automatically, we will not be pushing any buttons or setting any switches.
-2. We will load the length-prefixed ciphertext into the memory with instance ID _CT_. Once this is done, we will set the contents of address 0 in the memory with instance ID _MBOX_ to 'hFF. Your circuit will need to monitor _MBOX_ to discover when to start cracking.
-3. We will repeatedly read the contents of _MBOX_ at address 1. Once the value becomes 'hFF, we will also read addresses 2, 3, and 4 to recover the key (again, big-endian) and the contents of _PT_ to recover the length-prefixed plaintext. Both of these must be correct for your entry to be valid.
-4. To repeat the experiment, we will set _MBOX_[0] to 0, wait one second, and repeat the process starting at step 2. This means your circuit needs to notice this happening and react appropriately.
-
-Be creative. Adding more `crack` instances is an obvious strategy here, but there are many, _many_ other optimizations you can try.
-
-Happy Hunger Games, and may the odds be ever in your favour.
-
-
 ## Deliverables
 
 Note that the files in each task folder need to be **complete** — that is, they may not depend on any files in any other folders. So, for example, if you reuse `init.sv` in multiple tasks, it must appear in all relevant folders. Also don't forget to include the Verilog files for all the memories, like `s_mem.v`.
@@ -391,13 +367,6 @@ During your lab demo, you will likely be asked to demo only the last task you co
 
 - `doublecrack.sv`, `task5.sv`, and all other files required to implement your task
 - Any `tb_*.sv` testbenches you used to test your code
-
-### Bonus [1+ marks]
-
-- all source files required to build your implementation
-- a README describing your solution and anything special required to build it
-- your final `.sof` file (submitted **only on Connect**)
-
 
 ## Extra ciphertexts
 
